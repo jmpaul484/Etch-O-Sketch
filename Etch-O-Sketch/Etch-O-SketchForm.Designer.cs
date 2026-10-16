@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
@@ -37,13 +38,15 @@
             clearToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
-            SelectColorButton = new Button();
+            PictureBox = new PictureBox();
             DrawWaveformsButton = new Button();
             ClearButton = new Button();
             ExitButton = new Button();
+            PictureBoxToolTip = new ToolTip(components);
+            ColorComboBox = new ComboBox();
+            SelectColorButton = new Button();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -68,6 +71,7 @@
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new Size(141, 34);
             exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
@@ -107,23 +111,14 @@
             aboutToolStripMenuItem.Size = new Size(164, 34);
             aboutToolStripMenuItem.Text = "About";
             // 
-            // pictureBox1
+            // PictureBox
             // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Location = new Point(12, 36);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(929, 402);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // SelectColorButton
-            // 
-            SelectColorButton.Location = new Point(12, 444);
-            SelectColorButton.Name = "SelectColorButton";
-            SelectColorButton.Size = new Size(161, 61);
-            SelectColorButton.TabIndex = 2;
-            SelectColorButton.Text = "S&elect Color";
-            SelectColorButton.UseVisualStyleBackColor = true;
+            PictureBox.BackColor = Color.White;
+            PictureBox.Location = new Point(12, 36);
+            PictureBox.Name = "PictureBox";
+            PictureBox.Size = new Size(929, 402);
+            PictureBox.TabIndex = 1;
+            PictureBox.TabStop = false;
             // 
             // DrawWaveformsButton
             // 
@@ -143,33 +138,56 @@
             ClearButton.Tag = "";
             ClearButton.Text = "C&lear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(513, 444);
+            ExitButton.Location = new Point(780, 444);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(161, 61);
             ExitButton.TabIndex = 5;
             ExitButton.Text = "E&xit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
+            // ColorComboBox
+            // 
+            ColorComboBox.ForeColor = SystemColors.MenuText;
+            ColorComboBox.FormattingEnabled = true;
+            ColorComboBox.Location = new Point(592, 459);
+            ColorComboBox.Name = "ColorComboBox";
+            ColorComboBox.Size = new Size(182, 33);
+            ColorComboBox.TabIndex = 6;
+            ColorComboBox.Visible = false;
+            // 
+            // SelectColorButton
+            // 
+            SelectColorButton.Location = new Point(12, 444);
+            SelectColorButton.Name = "SelectColorButton";
+            SelectColorButton.Size = new Size(161, 61);
+            SelectColorButton.TabIndex = 7;
+            SelectColorButton.Text = "S&elect Color";
+            SelectColorButton.UseVisualStyleBackColor = true;
+            SelectColorButton.Click += this.SelectColorButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(953, 517);
+            Controls.Add(SelectColorButton);
+            Controls.Add(ColorComboBox);
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
             Controls.Add(DrawWaveformsButton);
-            Controls.Add(SelectColorButton);
-            Controls.Add(pictureBox1);
+            Controls.Add(PictureBox);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,10 +203,12 @@
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem clearToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
-        private PictureBox pictureBox1;
-        private Button SelectColorButton;
+        private PictureBox PictureBox;
         private Button DrawWaveformsButton;
         private Button ClearButton;
         private Button ExitButton;
+        private ToolTip PictureBoxToolTip;
+        private ComboBox ColorComboBox;
+        private Button SelectColorButton;
     }
 }
