@@ -154,7 +154,7 @@
             // 
             ColorComboBox.ForeColor = SystemColors.MenuText;
             ColorComboBox.FormattingEnabled = true;
-            ColorComboBox.Location = new Point(592, 459);
+            ColorComboBox.Location = new Point(513, 444);
             ColorComboBox.Name = "ColorComboBox";
             ColorComboBox.Size = new Size(182, 33);
             ColorComboBox.TabIndex = 6;
@@ -168,7 +168,7 @@
             SelectColorButton.TabIndex = 7;
             SelectColorButton.Text = "S&elect Color";
             SelectColorButton.UseVisualStyleBackColor = true;
-            SelectColorButton.Click += this.SelectColorButton_Click;
+            SelectColorButton.Click += SelectColorButton_Click;
             // 
             // Form1
             // 

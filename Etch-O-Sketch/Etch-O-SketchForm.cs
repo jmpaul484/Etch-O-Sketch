@@ -59,9 +59,15 @@ namespace Etch_O_Sketch
         {
             Close();
         }
+
+        private void SelectColorButton_Click(object sender, EventArgs e)
+        {
+            ColorComboBox.Visible = true;
+            ColorComboBox.Location = new Point(513, 444);
+        }
         private void PictureBox_MouseMove(object? sender, MouseEventArgs e)
         {
-           
+
             this.Text = $"Etch-O-Sketch - X: {e.X}, Y: {e.Y}";
             if (e.Button == MouseButtons.Left)
             {
